@@ -92,3 +92,12 @@ foreach ($path in $edgePaths) {
 }
 
 Write-Host "Limpeza concluída." -ForegroundColor Green
+
+# Limpa arquivos recentes do usuario
+
+Remove-Item "$env:APPDATA\Microsoft\Windows\Recent\*" -Force -Recurse -ErrorAction SilentlyContinue
+
+# Limpa Jump Lists recentes
+
+Remove-Item "$env:APPDATA\Microsoft\Windows\Recent\AutomaticDestinations\*" -Force -ErrorAction SilentlyContinue
+Remove-Item "$env:APPDATA\Microsoft\Windows\Recent\CustomDestinations\*" -Force -ErrorAction SilentlyContinue
