@@ -60,5 +60,6 @@ Install-ADDSForest `
     -InstallDNS `
     -SafeModeAdministratorPassword $Secure `
     -Force
-
+# Remove a tarefa agendada
+Unregister-ScheduledTask -TaskName "adinst" -Confirm:$false -ErrorAction SilentlyContinue
 Step 100 "Concluido. Reiniciando servidor..."
